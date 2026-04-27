@@ -1,14 +1,21 @@
 'use client'; // Required for App Router if using state
 
+import { redirect } from 'next/navigation';
 import React, { useState } from 'react';
 
 export default function LoginForm() {
+  debugger
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Login attempt:', { email, password });
+    if(email == "pastorfemi@stewardpro.com" && password == "password1234"){
+      redirect("/finance")
+    }
+    alert("Invalid username and password")
+    redirect("/")
   };
 
   // Inline Style Objects
@@ -75,8 +82,8 @@ export default function LoginForm() {
   return (
     <div style={containerStyle}>
       <div style={cardStyle}>
-        <h2 style={titleStyle}>StewardPro</h2>
-        <h2 style={titleStyle}>Login</h2>
+        <h2 style={titleStyle}><span style={{ fontWeight: 'bold', color: '#331eeb' }}>StewardPro</span></h2>
+        <h6 style={titleStyle}>Login</h6>
         <form onSubmit={handleSubmit}>
           <div style={inputGroupStyle}>
             <label style={labelStyle}>Email Address</label>

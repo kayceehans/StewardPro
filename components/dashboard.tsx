@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect, useMemo } from 'react';
-
+import SermonForm from './sermonform';
 export default function Dashboard() {
   const [name, setName] = useState("Alex");
   const [search, setSearch] = useState("");
@@ -103,15 +103,39 @@ export default function Dashboard() {
     <div style={styles.container}>
       {/* Top Header */}
       <header style={styles.header}>
-        <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Dashboard</h1>
+        <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>StewardPro</h1>
         <div style={{ fontWeight: '500' }}>Welcome, <span style={{ color: '#2563eb' }}>{name}</span></div>
       </header>
-
+  <SermonForm/>
       {/* Form Section */}
       <section style={styles.card}>
         <h2 style={{ marginBottom: '15px' }}>Add New Entry</h2>
         <form onSubmit={handleSubmit} style={{ display: isMobile ? 'block' : 'flex' }}>
           <input
+            style={styles.input}
+            placeholder="Entry Title"
+            value={formData.title}
+            onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+          />
+           <input
+            style={styles.input}
+            placeholder="Entry Title"
+            value={formData.title}
+            onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+          />
+           <input
+            style={styles.input}
+            placeholder="Entry Title"
+            value={formData.title}
+            onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+          />
+           <input
+            style={styles.input}
+            placeholder="Entry Title"
+            value={formData.title}
+            onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+          />
+           <input
             style={styles.input}
             placeholder="Entry Title"
             value={formData.title}
